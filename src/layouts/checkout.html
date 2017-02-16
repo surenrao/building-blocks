@@ -12,18 +12,9 @@
   </head>
   <body>
 
-    <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
-      <ul class="menu vertical">
-        {{> navigation-links}}
-        {{> social-links}}
-      </ul>
-    </div>
-    <div class="off-canvas-content" data-off-canvas-content>
-      {{> global-navigation}}
-      {{> hero}}
-      {{> body}}
-      {{> footer}}
-    </div>
+    {{> global-navigation}}
+    {{> body}}
+    {{> footer}}
 
     <script src="{{root}}assets/js/app.js"></script>
   </body>

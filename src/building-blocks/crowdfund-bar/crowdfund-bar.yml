@@ -1,0 +1,16 @@
+name: 'Crowdfunding Bar'
+tags:
+  - progress
+  - donate
+  - crowdfund
+  - flexbox
+category: status
+description: Show your vistiors the status of a danation campaign and quicky get them to donate.
+versions:
+  - 6.3.1
+  - 6.3.0
+author:
+  github: rafibomb
+  'foundation-forum': 10
+  name: Rafi
+containerClass: none

@@ -1,0 +1,121 @@
+$crowdfund-bar-height: 100px;
+$crowdfund-bar-progress-radius: 20px;
+
+.crowdfund-bar {
+  background: $dark-gray;
+  min-height: $crowdfund-bar-height;
+
+  .sr .progress-meter {
+    visibility: hidden;
+  }
+
+  .progress {
+    perspective: 800px;
+  }
+
+  .donate-progress {
+    margin: rem-calc(24) auto 1rem auto;
+  }
+}
+
+.crowdfund-bar-title-section {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+  .crowdfund-bar-title {
+    font-size: rem-calc(22);
+    color: $white;
+    font-weight: bold;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  @include breakpoint(medium) {
+    text-align: left;
+  }
+
+  @include breakpoint(small only) {
+    margin-top: 2rem;
+  }
+}
+
+.crowdfund-bar-status {
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  .crowdfund-bar-status-inner {
+    width: 100%;
+  }
+
+  @include breakpoint(medium) {
+    padding-right: 70px;
+    padding-left: 40px;
+  }
+
+  p {
+    color: $white;
+    margin-bottom: 14px;
+  }
+
+  .progress {
+    border-radius: $crowdfund-bar-progress-radius;
+    background: darken($dark-gray, 20%);
+    margin-bottom: 0;
+
+    @include breakpoint(small only) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .progress-meter {
+    background: $white;
+    border-radius: $crowdfund-bar-progress-radius;
+  }
+}
+
+.crowdfund-bar-donate {
+  background: $warning-color;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 0;
+
+  @include breakpoint(medium) {
+    border-left: 5px solid $body-background;
+    border-right: 5px solid $body-background;
+    min-height: $crowdfund-bar-height;
+  }
+
+  &:hover {
+    background: lighten($warning-color, 5%);
+  }
+
+  a {
+    width: 100%;
+    height: 100%;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: rem-calc(16);
+  }
+}
+
+.crowdfund-bar-donate {
+  a {
+    padding: 0.75rem;
+  }
+
+  @media screen and (min-width: 704px) and (max-width: 816px) {
+    &.column,
+    &.columns {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

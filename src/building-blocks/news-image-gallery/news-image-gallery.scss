@@ -1,0 +1,32 @@
+$news-img-gallery-outer-padding: $global-padding;
+$news-img-gallery-inner-padding: 0 $global-padding $global-padding $global-padding;
+
+.news-img-gallery {
+  display: block;
+  padding: $news-img-gallery-outer-padding;
+
+  @include breakpoint(medium) {
+    display: flex;
+  }
+}
+
+.news-img-gallery-slider,
+.news-img-gallery-info {
+  flex: 1 0 0;
+}
+
+.news-img-gallery-info {
+  padding: $news-img-gallery-inner-padding;
+}
+
+.news-img-gallery-thumbs {
+  overflow: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  img {
+    height: 100px;
+    width: 100px;
+  }
+}
+

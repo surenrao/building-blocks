@@ -1,0 +1,18 @@
+name: 'News Image Gallery'
+tags:
+  - images
+  - orbit
+  - gallery
+  - carousel
+  - flexbox
+  - animation
+category: media
+description: A image gallery slider that includes a short description.
+versions:
+  - 6.3.1
+  - 6.3.0
+author:
+  github: rafibomb
+  'foundation-forum': 10
+  name: Rafi
+containerClass: none

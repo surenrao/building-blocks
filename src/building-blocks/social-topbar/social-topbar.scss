@@ -1,0 +1,47 @@
+$social-topbar-bg: $primary-color;
+
+.social-topbar {
+  .sticky-topbar {
+    width: 100%;
+    .top-bar {
+      background: $social-topbar-bg;
+      .menu {
+        background: $social-topbar-bg;
+        .menu-text {
+          color: $white;
+        }
+
+        li:last-of-type {
+          margin-right: 0;
+        }
+
+        a {
+          color: $white;
+          transition: color 0.15s ease-in;
+
+          &:hover {
+            color: lighten($social-topbar-bg, 60%);
+          }
+
+          @include breakpoint(small only) {
+            padding: 0.875rem 0;
+          }
+        }
+
+        &.dropdown > li.is-dropdown-submenu-parent > a::after {
+          border-color: $white transparent transparent;
+        }
+
+        .has-submenu {
+          .submenu {
+            li {
+              &.divider {
+                border-bottom: 1px solid lighten($social-topbar-bg, 60%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

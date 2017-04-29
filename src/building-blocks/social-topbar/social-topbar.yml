@@ -1,12 +1,14 @@
-name: 'Sticky Top Bar'
+name: 'Social Top Bar'
 tags:
   - navigation
   - nav
   - menu
   - top bar
   - sticky
+  - social
+  - icons
 category: navigation
-description: A topbar navigation that is sticky. Make sure to set `anchor` to the ID of your page container.
+description: A topbar navigation that is sticky and social. This includes social icons & dropdown Menu
 versions:
   - 6.3.1
   - 6.3.0

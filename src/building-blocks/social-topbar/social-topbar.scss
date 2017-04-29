@@ -1,4 +1,4 @@
-$social-topbar-bg: $primary-color;
+$social-topbar-bg: #3b5998;
 
 .social-topbar {
   .sticky-topbar {
@@ -9,12 +9,24 @@ $social-topbar-bg: $primary-color;
         background: $social-topbar-bg;
         .menu-text {
           color: $white;
+          font-size: 1.1em;
+          margin-right: 0.25rem;
         }
-
+        .search {
+          height: 2.0625rem;
+          // border: rem-calc(1px) solid $social-topbar-bg;
+          // box-shadow: 0 0 5px $social-topbar-bg;
+          background-image: url('https://i.imgur.com/bt9tOjq.png');
+          background-position: .375rem .5rem; 
+          background-repeat: no-repeat;
+          padding: 0.75rem 1.25rem 0.75rem 1.6875rem;
+        }
+        > li > a.joined-icons {
+          padding: 0.7rem 0.5rem;
+        }
         li:last-of-type {
           margin-right: 0;
         }
-
         a {
           color: $white;
           transition: color 0.15s ease-in;
@@ -27,18 +39,12 @@ $social-topbar-bg: $primary-color;
             padding: 0.875rem 0;
           }
         }
-
         &.dropdown > li.is-dropdown-submenu-parent > a::after {
           border-color: $white transparent transparent;
         }
-
         .has-submenu {
-          .submenu {
-            li {
-              &.divider {
-                border-bottom: 1px solid lighten($social-topbar-bg, 60%);
-              }
-            }
+          .is-dropdown-submenu {
+            border: 0.0625rem solid $social-topbar-bg;
           }
         }
       }

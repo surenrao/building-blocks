@@ -1,0 +1,182 @@
+.bb-action-icon svg{
+  width: 30px;
+  height: 20px;
+}
+
+.heartSymbol{
+  position: relative;
+  width: 19px;
+  height: 16px;
+  margin: 0 auto;
+
+  .heart{
+    width: 55px;
+    height: 45px;
+    display: inline-block;
+    cursor: pointer;
+    animation-duration: .45s;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+    svg{
+      fill: transparent;
+      color: transparent;
+      transition: all .55s ease;
+    }
+  }
+  // === Adding a behind the symbol heart to animate and more!
+  .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    width: 55px;
+    height: 45px;
+    display: inline-block;
+    transform: scale(0);
+    pointer-events: none;
+    svg{
+      fill: #D75A4A;
+      color: #D75A4A;
+    }
+  }
+
+  // === Checkbox hack!
+  .hackyBox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    margin-bottom: 0;
+
+    &:checked {
+      ~ .heart {
+        animation-name: love;
+      }
+      ~ .layer {
+        transform: scale(1);
+        opacity: 1;
+        z-index: -1;
+        transition: transform .35s ease, opacity .35s ease;
+      }
+    }
+
+  }
+
+
+  // === Second ❤️ - fade effect and we need to fill the original heart
+  &.fade{
+    .hackyBox {
+      &:checked {
+        ~ .heart {
+          svg{
+            fill: #D75A4A;
+            color: #D75A4A;
+          }
+        }
+        ~ .layer {
+          transform: scale(5.4);
+          opacity: 0;
+        }
+      }
+    }
+  }
+  // === Third ❤️, it scales down a bit when hover
+  &.scale{
+    .heart {
+      transition: transform .45s ease;
+      pointer-events: none;
+    }
+    &:hover{
+      .hackyBox, .heart{
+        transform: scale(0.94);
+      }
+    }
+    .hackyBox {
+      &:checked {
+        ~ .heart {
+          transform: scale(1) !important; // This to not make the heart return to its hover state, remove it and you will see the difference!
+          svg{
+            fill: #D75A4A;
+            color: #D75A4A;
+          }
+        }
+        ~ .layer {
+          transform: scale(5.4);
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  // === Forth ❤️, Well, it bubbles ;)
+  &.bubbly {
+    .hackyBox{
+      &:checked {
+        ~ .layer {
+          transition: transform .65s ease, opacity .75s ease;
+        }
+        // Just a delay. Well, I don't prefer to add much layers
+        // They would look heavey and yet its not much good for performance, but its fun!
+        ~ .second {
+          transition-delay: .1s;
+        }
+        ~ .third {
+          transition-delay: .14s;
+        }
+      }
+    }
+  }
+
+    // === Fifth and Sixth ❤️, Well, CHECK'm OUT 💎
+  &.strokeAway, &.stroke {
+    .layer {
+        transform: scale(1);
+      svg{
+        fill: transparent;
+        color: transparent;
+        .animatedPath {
+          // === Wondering how these numbers come ?
+          // Check the JS panel!
+          stroke-dashoffset: 156;
+          stroke-dasharray: 156;
+        }
+      }
+    }
+    .hackyBox{
+      &:checked {
+        ~ .layer {
+          transition: transform .65s ease, opacity .9s ease;
+          z-index: 1;
+          svg {
+            fill: #D75A4A;
+            color: #D75A4A;
+            transition: color .4s ease .2s;
+          }
+          .animatedPath {
+            stroke-dashoffset: 0;
+            transition: all .9s ease;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@keyframes love {
+  0% {
+    transform: scale(1);
+  }
+  25%{
+    transform: scale(0.94);
+  }
+  50%{
+     transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -6,13 +6,13 @@ $social-topbar-searchbox-height: 2.0625rem;
     width: 100%;
     .top-bar {
       background: $social-topbar-bg;
+      .top-bar-title {
+        color: $white;
+        font-size: 1.1em;
+        margin-right: 0.25rem;
+      }
       .menu {
         background: $social-topbar-bg;
-        .menu-text {
-          color: $white;
-          font-size: 1.1em;
-          margin-right: 0.25rem;
-        }
         .search {
           height: $social-topbar-searchbox-height;
           background-image: url('https://i.imgur.com/bt9tOjq.png');

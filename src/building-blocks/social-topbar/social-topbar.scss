@@ -1,5 +1,5 @@
 $social-topbar-bg: #3b5998;
-$social-topbar-height: 2.0625rem;
+$social-topbar-searchbox-height: 2.0625rem;
 
 .social-topbar {
   .sticky-topbar {
@@ -14,7 +14,7 @@ $social-topbar-height: 2.0625rem;
           margin-right: 0.25rem;
         }
         .search {
-          height: $social-topbar-height;
+          height: $social-topbar-searchbox-height;
           background-image: url('https://i.imgur.com/bt9tOjq.png');
           background-position: .375rem .5rem; 
           background-repeat: no-repeat;

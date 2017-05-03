@@ -10,40 +10,46 @@ $social-topbar-searchbox-height: 2.0625rem;
         color: $white;
         font-size: 1.1em;
         margin-right: 0.25rem;
+        margin-top: 0.25rem;
       }
-      .menu {
-        background: $social-topbar-bg;
-        .search {
-          height: $social-topbar-searchbox-height;
-          background-image: url('https://i.imgur.com/bt9tOjq.png');
-          background-position: .375rem .5rem; 
-          background-repeat: no-repeat;
-          padding: 0.75rem 1.25rem 0.75rem 1.6875rem;
-        }
-        > li > a.joined-icons {
-          padding: 0.7rem 0.5rem;
-        }
-        li:last-of-type {
-          margin-right: 0;
-        }
-        a {
-          color: $white;
-          transition: color 0.15s ease-in;
-
-          &:hover {
-            color: lighten($social-topbar-bg, 60%);
+      .flex-menu { // https://github.com/zurb/foundation-sites/issues/9871
+        display: flex;
+        flex: auto;
+        .menu {
+          background: $social-topbar-bg;
+          .search {
+            height: $social-topbar-searchbox-height;
+            background-image: url('https://i.imgur.com/bt9tOjq.png');
+            background-position: .375rem .5rem; 
+            background-repeat: no-repeat;
+            margin-left: 0.5rem;
+            padding: 0.75rem 1.25rem 0.75rem 1.6875rem;
           }
-
-          @include breakpoint(small only) {
-            padding: 0.875rem 0;
+          > li > a.joined-icons {
+            padding: 0.7rem 0.5rem;
           }
-        }
-        &.dropdown > li.is-dropdown-submenu-parent > a::after {
-          border-color: $white transparent transparent;
-        }
-        .has-submenu {
-          .is-dropdown-submenu {
-            border: 0.0625rem solid $social-topbar-bg;
+          li:last-of-type {
+            margin-right: 0;
+          }
+          a {
+            color: $white;
+            transition: color 0.15s ease-in;
+
+            &:hover {
+              color: lighten($social-topbar-bg, 60%);
+            }
+
+            @include breakpoint(small only) {
+              padding: 0.875rem 0;
+            }
+          }
+          &.dropdown > li.is-dropdown-submenu-parent > a::after {
+            border-color: $white transparent transparent;
+          }
+          .has-submenu {
+            .is-dropdown-submenu {
+              border: 0.0625rem solid $social-topbar-bg;
+            }
           }
         }
       }

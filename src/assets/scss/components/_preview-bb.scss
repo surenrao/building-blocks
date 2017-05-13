@@ -32,11 +32,24 @@
   }
 }
 
-.building-block-description {
+.bb-description-area {
   background: $blue-gray;
   color: $medium-blue;
-  font-weight: $global-weight-semibold;
+  font-weight: $global-weight-normal;
   padding-top: rem-calc(15);
   text-align: center;
   width: 100%;
+}
+
+.bb-description {
+  width: 100%;
+}
+
+.bb-requirements {
+  font-weight: $global-weight-bold;
+}
+
+.bb-requirements-link {
+  color: $medium-blue;
+  text-decoration: underline;
 }

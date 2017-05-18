@@ -167,6 +167,7 @@ function buildingBlockBaseStyles() {
 function buildingBlockSass() {
   var blocks = JSON.parse(fs.readFileSync(PATHS.build + '/data/building-blocks.json', 'utf8'));
   return gulp.src(['src/building-blocks/**/*.scss'])
+    .pipe($.cached('bb-styles'))
     .pipe($.insert.transform(function(contents, file){
       var pieces = file.path.split('/');
       var bbName = pieces[pieces.length - 2];
@@ -188,6 +189,7 @@ function buildingBlockSass() {
     .pipe($.autoprefixer({
       browsers: COMPATIBILITY
     }))
+    .pipe($.remember('bb-styles'))
     .pipe(gulp.dest(PATHS.dist + "/building-block/"))
 }
 
@@ -276,7 +278,14 @@ function watch() {
   gulp.watch('src/pages/**/*.html').on('all', gulp.series(kitIndex, reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(kitIndex, 'dynamic-pages',  reload));
   gulp.watch('src/building-blocks/**/*.html').on('all', gulp.series( 'building-block-pages', 'building-block-indices', reload));
-  gulp.watch('src/building-blocks/**/*.scss').on('all', gulp.series(buildingBlockSass,  'building-block-pages',reload));
+  gulp.watch('src/building-blocks/**/*.scss').
+    on('change', function(event) {
+      if(event.type === 'deleted') {
+        delete $.cached.caches['bb-styles'][event.path];
+        remember.forget('bb-styles', event.path);
+      }
+    }).
+    on('all', gulp.series(buildingBlockSass,  'building-block-pages',reload));
   gulp.watch('src/building-blocks/**/*.js').on('all', gulp.series(buildingBlockJS, 'building-block-pages', reload));
   gulp.watch(['src/building-blocks/**/*.png', 'src/kits/**/*.png']).on('all', gulp.series('copy', reload));
   gulp.watch('src/building-blocks/**/*.yml').on('all', gulp.series('building-block-meta', 'dynamic-pages', reload));

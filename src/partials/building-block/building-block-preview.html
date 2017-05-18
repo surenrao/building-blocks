@@ -5,7 +5,11 @@
 </div>
 <div class="bb-description-area">
   <div class="row column">
-    <p class="bb-description">{{block.description}}     <span class="bb-requirements">Requires <a class="bb-requirements-link" href="">Flexbox</a></span></p>
+    <p class="bb-description">{{block.description}}
+    {{#if block.requirements}}
+      <span class="bb-requirements">Requires {{requirements block}}</span>
+    {{/if}}
+    </p>
   </div>
 </div>
 </div>

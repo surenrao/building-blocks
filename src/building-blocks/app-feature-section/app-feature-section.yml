@@ -18,3 +18,5 @@ author:
   'foundation-forum': 10
   name: Rafi
 containerClass: none
+requirements:
+  - flexbox

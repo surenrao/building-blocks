@@ -30,6 +30,13 @@ function buildingBlockCombineMeta() {
         output[name].href = 'blocks/' + name + '.html';
         output[name].thumb = 'assets/img/building-block/' + key + '.png';
         output[name]['major-versions'] = majorVersions(value.versions);
+        if(output[name].requirements) {
+          output[name].requirements = _.map(output[name].requirements, function(req) {
+            let obj = {text: req.charAt(0).toUpperCase() + req.slice(1)};
+            // obj.href = lookupHrefForReq(req)
+            return obj;
+          });
+        }
       })
       return new Buffer(JSON.stringify(output));
     }))

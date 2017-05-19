@@ -7,6 +7,7 @@ tags:
   - sticky
   - social
   - icons
+  - search
 category: navigation
 description: A topbar navigation that is sticky and social. This includes social icons & dropdown Menu
 versions:

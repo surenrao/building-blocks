@@ -15,3 +15,5 @@ author:
   'foundation-forum': 10
   name: Rafi
 containerClass: container-padded row align-center medium-6 columns
+requirements:
+  - font-awesome

@@ -16,4 +16,5 @@ author:
   name: Kevin Ball
   'foundation-forum': 17824
   github: kball
-
+requirements:
+  - flexbox

@@ -11,3 +11,5 @@ versions:
 author:
   github: LaurelBCodin
   name: Laurel Beyers
+requirements:
+  - font-awesome

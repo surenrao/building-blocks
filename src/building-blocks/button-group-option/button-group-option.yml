@@ -15,3 +15,6 @@ author:
   name: Rafi
 grid: flexbox
 containerClass: row align-center medium-6 large-5 column
+components:
+  - 'button'
+  - 'button-group'

@@ -13,3 +13,8 @@ versions:
 author:
   name: Christine Siu
 containerClass: row column medium-6 align-right container-padded
+components:
+  - button
+  - dropdown
+  - toggler
+  

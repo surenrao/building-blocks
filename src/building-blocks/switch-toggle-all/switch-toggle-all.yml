@@ -16,3 +16,5 @@ author:
   'foundation-forum': 10
   name: Rafi
 containerClass: row column medium-5
+components:
+  - switch

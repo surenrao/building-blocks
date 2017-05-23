@@ -16,3 +16,5 @@ author:
   github: canterberrie
   name: Christine Siu
 containerClass: text-center container-padded
+components:
+  - button

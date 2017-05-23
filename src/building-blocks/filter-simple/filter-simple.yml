@@ -18,3 +18,8 @@ author:
   'foundation-forum': 10
   name: Rafi
 containerClass: container-padded
+components:
+  - 'button'
+  - 'button-group'
+  - 'grid'
+  - 'block-grid'

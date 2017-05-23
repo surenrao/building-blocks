@@ -14,3 +14,6 @@ author:
   github: canterberrie
   name: Christine Siu
 containerClass: row column medium-6 large-4 align-center container-padded
+components:
+  - card
+  - button

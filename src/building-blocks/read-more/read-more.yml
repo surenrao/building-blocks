@@ -14,3 +14,6 @@ author:
   'foundation-forum': 10
   name: Rafi
 containerClass: row medium-7 large-5 align-center columns container-padded
+components:
+  - toggler
+  - callout

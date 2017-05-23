@@ -17,3 +17,6 @@ author:
   'foundation-forum': 10
   name: Rafi
 containerClass: container-padded text-center
+components:
+  - button
+  - callout

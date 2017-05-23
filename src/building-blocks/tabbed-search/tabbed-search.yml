@@ -12,3 +12,5 @@ author:
   github: kball
   'foundation-forum': 17824
   name: Kevin
+components:
+  - tab

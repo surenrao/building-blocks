@@ -1,0 +1,34 @@
+$input-clearable-button-color: $dark-gray;
+
+.input-clearable {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+
+  input {
+    margin-bottom: 0;
+  }
+
+  button[type="reset"] {
+    @include vertical-center;
+    display: none;
+    right: 0.5rem;
+    border: 0;
+    padding: 0.5rem;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+
+    svg {
+      fill: lighten($input-clearable-button-color, 10%);
+    }
+
+    svg:hover {
+      fill: $input-clearable-button-color;
+      transition: all 0.2s ease-in;
+    }
+  }
+
+  input:valid ~ button[type="reset"] {
+    display: block;
+  }
+}

@@ -58,7 +58,7 @@ $pagination-radius: 4px;
     }
   }
 
-  .pagination-previous {
+  .pagination-previous a {
     @extend .pagination-pointed-button;
     border-radius: 0 $pagination-radius $pagination-radius 0;
     margin-left: 18px;
